@@ -1,0 +1,10 @@
+<div class="contents row">
+  <%= form_for(@post) do |f|%>
+    <h3>
+      編集する
+    </h3>
+    <%= f.file_field :image %>
+    <%= f.text_area :text, placeholder: 'text', style: 'cols: 30;rows: 10', value: @post.text%>
+    <%= f.submit "SENT"%>
+  <% end %>
+</div>

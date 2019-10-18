@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_for(@post) do |f|%>
+      <h3>
+        投稿する
+      </h3>
+      <%= f.file_field :image%>
+      <%= f.text_area :text, placeholder: 'text', style: 'cols: 30;rows: 10'%>
+      <%= f.submit "SENT"%>
+    <% end %>
+  </div>
+</div>
