@@ -7,6 +7,9 @@
       <div class="card-content">
         <%= simple_format(post.text) %>
       </div>
+      <li>
+        <%= link_to "詳細", post_path(post.id), method: :get %>
+      </li>
       <div class="card-action">
         <% if user_signed_in? && current_user.id == post.user_id %>
 
