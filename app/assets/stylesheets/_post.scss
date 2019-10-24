@@ -146,7 +146,7 @@ body{
 
 .more_list{
   position: absolute;
-  
+  margin: 9px 0 0 550px;
 }
 
 .box17{
@@ -170,4 +170,24 @@ body{
 .box17 p {
   margin: 0; 
   padding: 0;
+}
+
+.btnedit{
+  padding: inherit;
+  height: 25px;
+  width: 45px;
+}
+
+.ddedit{
+  padding: inherit;
+  width: 100px;
+}
+.col-lg-12{
+  padding: inherit;
+}
+.col-lg-2{
+  padding: inherit;
+}
+.col-lg-10{
+  padding: inherit;
 }

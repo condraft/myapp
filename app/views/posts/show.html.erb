@@ -3,38 +3,53 @@
     <img class="col-md-7 showimg" src="<%= @post.image %>">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <ul class="more_list">
-          <li>
-            <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btnedit" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-edit"></i></button>
+            <div class="dropdown-menu ddedit" aria-labelledby="dropdownMenuButton">
+                <li>
+
+                  <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get,class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to '削除', "/posts/#{@post.id}", method: :delete,class: "dropdown-item" %>
+                </li>
+            </div>
+          </div>
         </ul>
       <% end %>
-      <%= simple_format(@post.text) %>
-      <span class="name">
-        <a href="/users/<%= @post.user.id %>">
-          <span>投稿者</span><%= @post.user.nickname %>
-        </a>
-      </span>
-    <div class="col-md-2"> 
-    <!-- ここからフォーム -->
-      <% if current_user %>
-        <%= form_tag("/posts/#{@post.id}/comments",  method: :post,  id: "new_comment" ) do %>
-          <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textbox"></textarea>
-          <input type="submit" value="SENT">
-        <% end %>
-      <% end %>
-      <div class="comments">   
-        <h4>＜コメント一覧＞</h4>
-        <% if @comments %>
-          <% @comments.each do |comment| %>
-            <p>
-              <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-              <%= comment.text %>
-            </p>
+    <div class="col-md-5"> 
+      <div class="row">
+        <div class="col-lg-2">
+          <span class="name">
+            <a href="/users/<%= @post.user.id %>">
+              <%= @post.user.nickname %>:
+            </a>
+          </span>
+        </div>
+        <div class="col-lg-10">
+          <%= simple_format(@post.text) %>
+        </div>
+        <div class="col-lg-12">
+          <div class="comments">   
+            <h4>--------------------------------------------------</h4>
+            <% if @comments %>
+              <% @comments.each do |comment| %>
+                <p>
+                  <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        <div class="col-lg-12">
+          <% if current_user %>
+            <%= form_tag("/posts/#{@post.id}/comments",  method: :post,  id: "new_comment" ) do %>
+              <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textbox"></textarea>
+              <input type="submit" value="SENT">
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
