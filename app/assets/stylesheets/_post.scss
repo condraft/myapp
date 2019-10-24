@@ -120,3 +120,54 @@ body{
   height: 100vh;
   overflow: scroll;
 }
+
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+}
+.page-link{
+  color: black;
+  border-color: black;
+}
+.page-item.active .page-link{
+  background-color: gray;
+  border-color: gray;
+}
+
+.showcont{
+  margin-top: 50px;
+  overflow: scroll;
+}
+
+.showimg{
+  position: relative;
+  padding: inherit;
+}
+
+.more_list{
+  position: absolute;
+  
+}
+
+.box17{
+  margin:2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.box17:before, .box17:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+  margin: 0; 
+  padding: 0;
+}
