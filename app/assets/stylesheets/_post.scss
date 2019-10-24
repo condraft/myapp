@@ -1,9 +1,109 @@
 @font-face {
-  font-family: 'ほのか明朝';
-  src: url('font_1_honokamin.ttf') format('truetype');
+  font-family: 'ドット';
+  src: url('PixelMplus10-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 *{
-  font-family: 'ほのか明朝',serif;
+  font-family: 'ドット',serif;
+}
+a:hover{
+  text-decoration: none;
+}
+
+.main{
+  margin: 150px 0 0 220px;
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+.bg-light{
+  background-color: white !important;
+  height: 60px;
+}
+body{
+  background-color: #f8f9fa;
+}
+
+.grid-6{
+  a{
+    color: black;
+  }
+}
+
+.btn1 {
+  padding: 15px 70px;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none !important;
+  font-size: 60px;
+  border-radius: 10px;
+  // position: absolute;
+  margin: auto;
+}
+.btn2 {
+  background-color: black;
+  color: #fff !important;
+}
+.btn1:hover {
+  opacity: 1.0;
+}
+
+.btn3 {
+  background-color: #f8f9fa;
+  color: black !important;
+  background-size: 200% 100%;	
+  background-image: -webkit-linear-gradient(left, transparent 50%, rgb(63, 63, 73) 50%);	
+  background-image: linear-gradient(to right, transparent 50%, rgb(63, 63, 73) 50%);
+  -webkit-transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .5s ease 0s, background-color .5s ease;
+  margin-top: 40px;
+}
+.btn3:hover {
+  background-color: black;
+  background-position: -100% 100%;
+}
+
+.post{
+  color: black;
+}
+.container1{
+  padding: 200px 0 0 240px;
+}
+
+.cont{
+  display: flex;
+}
+
+.dropdown-item{
+  a{
+    color: black;
+  }
+}
+
+.grid-6{
+  margin:0 280px;
+}
+
+.btn-group{
+  width: 100px;
+  margin: 0;
+}
+
+.btn-secondary{
+  color: black;
+  background-color: #fff;
+}
+
+.img-thumbnail{
+  margin: 50px 10px 0 40px;
+  padding: 0;
 }

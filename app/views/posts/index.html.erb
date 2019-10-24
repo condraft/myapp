@@ -1,11 +1,23 @@
-<div class="contents">
-  <div class="contents-row">
-    <% @posts.each do |post| %>
-      <%= render partial: "post", locals: { post: post } %>
-    <% end %>
-    <%= paginate(@posts) %>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 postlist jscroll">
+        <% @posts.each do |post| %>
+          <%= render partial: "post", locals: { post: post } %>
+        <% end %>
+        <%= paginate(@posts) %>
+      </div>
+    </div>
   </div>
-  <div class="contents-right">
-    <a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/ikumidddd?ref_src=twsrc%5Etfw">Tweets by ikumidddd</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<% else %>
+  <div class="container">
+    <div class="main">
+      <div class="btn1 btn2 btn3">
+        <%= link_to "きろくをつづける", new_user_session_path, :class => 'post' %>
+      </div>
+      <div class="btn1 btn2 btn3">
+        <%= link_to "あたらしいたんさくしゃ", new_user_registration_path, :class => 'post' %>
+      </div>
+    </div>
   </div>
-</div>
+<% end %>

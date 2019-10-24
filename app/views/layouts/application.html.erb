@@ -10,28 +10,24 @@
 
   <body>
     <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">まいあぷり</a></h1>
+      <div class="nav justify-content-center border-bottom bg-light">
+        <h1 class="grid-6"><a href="/">たんけんのきろく</a></h1>
+        
         <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <span><%= current_user.nickname %>
-              <ul class="user__info">
-                <li>
-                  <a href="/users/<%= current_user.id %>">マイページ</a>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-            <a class="post" href="/posts/new">投稿する</a>
-          </div>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, :class => 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, :class => 'post' %>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              *<%= current_user.nickname %>*がきろくちゅう
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/users/<%= current_user.id %>">すてーたす</a>
+              <a class="dropdown-item" href="/posts/new">ぼうけんにっしをかく</a>
+              <div class="dropdown-item"><%= link_to "きょうはやめる", destroy_user_session_path, method: :delete %></div>
           </div>
         <% end %>
       </div>
-    </header>
     <%= yield %>
+    </header>
+
+    
   </body>
 </html>

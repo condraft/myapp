@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery.jscroll.min.js
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+$(window).on('scroll', function() {
+  scrollHeight = $(document).height();
+  scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+        $('.jscroll').jscroll({
+          contentSelector: '.postlist',
+          nextSelector: 'span.next:last a'
+        });
+  }
+});
