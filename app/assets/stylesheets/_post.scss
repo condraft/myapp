@@ -7,6 +7,9 @@
 *{
   font-family: 'ドット',serif;
 }
+
+
+
 a:hover{
   text-decoration: none;
 }
@@ -31,6 +34,7 @@ h1{
 }
 body{
   background-color: #f8f9fa;
+
 }
 
 .grid-6{
@@ -104,6 +108,15 @@ body{
 }
 
 .img-thumbnail{
-  margin: 50px 10px 0 40px;
+  margin: 40px 10px 0 40px;
   padding: 0;
+}
+
+.maincon{
+  height: 100vh;
+}
+
+.postlist{
+  height: 100vh;
+  overflow: scroll;
 }
